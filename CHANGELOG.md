@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+* 0.2.1 (2014-03-27)
+
+  * Session: handle "cull" method
+
 * 0.2.0 (2014-01-31)
 
   * Feature: Bump react dependency to 0.3.*
