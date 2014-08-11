@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+* 0.2.2 (2014-08-11)
+
+  * Support react 0.4 and evenement 2.0
+
 * 0.2.1 (2014-03-27)
 
   * Session: handle "cull" method
