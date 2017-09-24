@@ -89,7 +89,7 @@ class DNode extends EventEmitter
         $onReady = isset($params['block']) ? $params['block'] : null;
         $stream = new Stream($this, $client, $onReady);
 
-        $conn->pipe($stream)->pipe($conn);
+        $conn->pipe($stream->getStream())->pipe($conn);
 
         $client->start();
     }
