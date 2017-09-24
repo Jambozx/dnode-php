@@ -27,6 +27,10 @@ class DNode extends EventEmitter
         return $this;
     }
 
+    /**
+     * @return bool
+     * @throws \Exception
+     */
     public function connect()
     {
         $params = $this->protocol->parseArgs(func_get_args());
@@ -40,7 +44,6 @@ class DNode extends EventEmitter
 
         $client = @stream_socket_client("tcp://{$params['host']}:{$params['port']}");
         if (!$client) {
-            return false;
             $e = new \RuntimeException("No connection to DNode server in tcp://{$params['host']}:{$params['port']}");
             $this->emit('error', array($e));
 
@@ -48,11 +51,12 @@ class DNode extends EventEmitter
                 trigger_error((string) $e, E_USER_ERROR);
             }
 
-            return;
+            return false;
         }
 
         $conn = new Connection($client, $this->loop);
         $this->handleConnection($conn, $params);
+
         return true;
     }
 
@@ -69,11 +73,11 @@ class DNode extends EventEmitter
 
         $that = $this;
 
-        $server = new Server($this->loop);
+        $server = new Server($params['host'].":".$params['port'],$this->loop);
         $server->on('connection', function ($conn) use ($that, $params) {
             $that->handleConnection($conn, $params);
         });
-        $server->listen($params['port'], $params['host']);
+//        $server->listen($params['port'], $params['host']);
 
         return $server;
     }

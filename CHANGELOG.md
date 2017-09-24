@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+* 0.2.3 (2017-09-24)
+
+  * Updated to react/socket >=0.5.0 (0.8.4)
+  * Return bool from DNode::connect()
+
 * 0.2.2 (2014-08-11)
 
   * Support react 0.4 and evenement 2.0
