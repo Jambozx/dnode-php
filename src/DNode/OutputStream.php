@@ -1,6 +1,5 @@
 <?php
 namespace DNode;
-use React\Stream\ReadableStream;
 
 class OutputStream extends ReadableStream
 {

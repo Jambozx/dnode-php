@@ -1,6 +1,5 @@
 <?php
 namespace DNode;
-use React\Stream\WritableStream;
 
 class InputStream extends WritableStream
 {
