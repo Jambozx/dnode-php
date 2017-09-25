@@ -9,7 +9,7 @@ You can read more about DNode and PHP in the [introductory blog post](http://ber
 
 ## Installing
 
-dnode-php can be installed using the [Composer](http://packagist.org/) tool. You can either add `dnode/dnode` to your package dependencies, or if you want to install dnode-php as standalone, go to the main directory of this package and run:
+dnode-php can be installed using the [Composer](http://packagist.org/) tool. You can either add `jambozx/dnode` to your package dependencies, or if you want to install dnode-php as standalone, go to the main directory of this package and run:
 
     $ wget http://getcomposer.org/composer.phar
     $ php composer.phar install

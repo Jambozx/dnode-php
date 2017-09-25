@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-* 0.2.3 (2017-09-24)
+* 0.2.4 (2017-09-25)
 
   * Updated to react/socket >=0.5.0 (0.8.4)
   * Return bool from DNode::connect()
