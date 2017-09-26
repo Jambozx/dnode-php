@@ -7,18 +7,18 @@ class Stream
     private $dnode;
 
     private $client;
+    private $stream;
 
-	/**
+    /**
      * @return CompositeStream
      */
     public function getStream()
     {
-        static $stream=null;
-        if($stream)
-            return $stream;
+        if($this->stream)
+            return $this->stream;
         $input = new InputStream($this->client);
         $output = new OutputStream($this->client);
-        return ($stream=new CompositeStream($output, $input));
+        return ($this->stream=new CompositeStream($output, $input));
     }
 
     public function __construct(DNode $dnode, Session $client, $onReady)
